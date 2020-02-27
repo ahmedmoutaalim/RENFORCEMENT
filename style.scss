@@ -1,21 +1,55 @@
 body{
 
     font-family: 'Barlow' ;
-    width: 90%;
+    margin: 5%;
+    
 
 }
+
+.menu__logo {
+
+    height: 20%;
+    margin-bottom: ;
+}
+
 
 
 .menu {
-
+    
     text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    
+    
     
 }
+
 
 .menu ul {
-    
-    display: flex;
+    list-style: none;
+    background-color:hsl(207, 33%, 95%);
+    padding-bottom: 30%;
 }
+
+.menu ul il {
+   
+
+    padding: 0px 15px;
+}
+
+  
+
+
+
+.content{
+
+
+}
+
+
+
+
 
 
 

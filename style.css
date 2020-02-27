@@ -1,15 +1,33 @@
 body {
   font-family: 'Barlow';
-  width: 90%;
+  margin: 5%;
+}
+
+.menu__logo {
+  height: 20%;
 }
 
 .menu {
   text-align: right;
-}
-
-.menu ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu ul {
+  list-style: none;
+  background-color: #eef3f6;
+  padding-bottom: 30%;
+}
+
+.menu ul il {
+  padding: 0px 15px;
 }
 /*# sourceMappingURL=style.css.map */
