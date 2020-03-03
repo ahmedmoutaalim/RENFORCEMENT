@@ -1,3 +1,14 @@
+
+@mixin mq($width) {
+
+    @media screen and (max-width:$width){
+        @content;
+        
+    }
+    
+}
+
+
 *{
 
     margin:0px;
@@ -5,7 +16,9 @@
 }
 
 
-
+html{
+    overflow-x: hidden;
+}
 
 
 body{
@@ -17,6 +30,30 @@ body{
     
 
 }
+.bg{
+    
+    height: 400px;
+    width: 50%;
+    background-color: hsl(207, 33%, 95%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -10;
+    border-bottom-left-radius: 100px;
+
+    @include mq(845px) {
+        height: 490px;
+
+    }
+
+    @include mq(400px) {
+        height: 450px;
+
+    }
+    
+}
+
+
 
 
 
@@ -29,22 +66,103 @@ body{
     flex-direction: row-reverse;
     justify-content: space-between;
 
+    &__div{
+        
+        
+        @include mq(780px){
+
+            
+            
+            display: block;  
+            position: absolute;
+            z-index: 5;
+            background-color: white;
+            padding: 40px 120px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),            
+             0 6px 8px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 10px; 
+            right: 30%;
+            top: 100px;
+            font-size: 20px;
+            display: none;
+            display:initial;
+
+
+        }
+
+        @include mq(700px){
+
+            right: 25%;
+        }
+
+        @include mq(510px){
+
+            right: 17%;
+        }
+
+        @include mq (400px){
+
+            right: 5px;
+        }
+        @include mq(375px){
+            right: 16px;
+        }
+    }
+
+    .burger {
+        position: absolute;
+        display: none;
+        
+        @include mq(780px){
+            display: initial;
+        }
+
+
+        &__open {
+
+            position: absolute;
+
+            top:28px;
+            right: 30px;
+            width: 35px;
+        }
+
+        &__close{
+
+            position: absolute;
+            display: none;
+            top:10px;
+            right: 10px;
+            width: 35px;
+        }
+
+    }
+
+    
+ 
+
     &__logo {
 
         height: 20%;
         margin-left: 10%;
         padding-top:2% ;
+
+        
     }
 
     &__gray {
            
-       color: hsl(231, 7%, 65%);    
+          
+       font-size: 30px;
+       color: hsl(231, 7%, 65%);
+       
+    @include mq(780px){
+        display: none ;
     }
-   
-
-   
+    }  
     
 }
+
 
 
 .menu ul {
@@ -54,11 +172,20 @@ body{
     width: 50%;
     text-align: center;
     border-radius:0% 0% 0% 60px;
-    z-index: 2;
+    z-index: -2;
+    @include mq(780px){
+        z-index: 6;
+        background:none;
+    }
     
-   
+
+    
+    
+    
     
 }
+
+
 
 
 
@@ -67,14 +194,28 @@ body{
 
     padding: 0px 18px;
     font-weight:bold;
+   
+    
     
 }
+
+
 
 .menu ul il a {
 
     text-decoration:none;
     color: black;
+    
+    @include mq(780px){
+        display: block ;
+       
 
+    }
+
+    &__color {
+        color:hsl(231, 7%, 65%) ;
+    }
+    
   
 }
 
@@ -85,22 +226,46 @@ body{
 .content{
 
     display: flex;
-    position:absolute ;
-    z-index: 3;
+    flex-direction: row;
+    
     margin-top: -15%;
     margin-left: 10%;
 
     width: 80%;
+    @include mq(1040px){
+
+        flex-direction: column-reverse;
+
+    }
+
+
+
        &__img {
-        justify-content: space-between;
-        margin-left: 20%;
+        
+        margin-left: 25%;
          width: 130%;
+
+
+         @include mq(780px){
+
+            margin-top: 70px;
+         }
+         
+       }
+
+       &__image {
+        //    width:   40%;
        }
 
        &__organisation {
 
         margin-top: 5%;
         line-height: 400%;
+        width:60%;
+        @include mq(1040px){
+         width: 100%;
+        
+        }
         
        }
        &__back {
@@ -122,17 +287,20 @@ body{
       }
 
       &__text {
-       font-size: 60px;
-       width: 500px;
+      font-size: 450%;
+   
 
       }
 
       &__text2 {
 
+       width: 60%;
        color: hsl(231, 7%, 65%) ; 
        font-size: 22px;
        line-height: 30px;
        margin-top: 20px;
+
+       
 
       }
 
@@ -142,31 +310,38 @@ body{
 
      display: flex;
      color: hsl(231, 7%, 65%);
+
      &__button{
          
         background: hsl(0, 100%, 68%);
         color: white;
-        border-radius: 10px;
+        border-radius: 5px;
         font-weight: bolder; 
+      
 
         margin: 40px 20px 0px  0PX ;
-        height: 42px;
-        width:30%;
+        padding: 0% 5%;
+        height: 40px;
+        width:40%;
         border: none;
         outline: none;
     }
 
     &__text {
-
+        
         margin: 28px 0px 0px 0px;
+        word-spacing: 6px;
+
+        
     }
 
-
-
-
-
-
 }
+
+
+
+
+
+
 
 
 

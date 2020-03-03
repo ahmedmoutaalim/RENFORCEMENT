@@ -5,6 +5,7 @@
     <link rel="stylesheet"  href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:400,700&display=swap" rel="stylesheet">
+    
     <!-- displays site properly based on user's device -->
 
     <link
@@ -29,20 +30,30 @@
   </head>
 
   <body>
+    <div class="bg"></div>
 
   <div class="box"> 
 
-       <nav class="menu">      
-          <ul>
+       <nav class="menu"> 
+
+      
+          <ul class="menu__links">
+            <div  class="menu__div" id="null">
              <il><a href="#">PRODUCT</a></il>
              <il><a href="#">FEATURES</a></il>
              <il><a href="#">PRICING</a></il>
              <il class="menu__gray">.</il>
-             <il class="menu__gray">LOGIN</il> 
-            
-          </ul>
-
+             <il><a class="menu__color" href="#">LOGIN</a></il>
+            </div>
+            </ul>
+          
           <img class="menu__logo" src="images/logo.svg"> 
+
+        <div class="burger">
+          <img id="open" class="burger__open"src="images/icon-hamburger.svg" alt="BURGER"> 
+        <img  class="burger__close"src="images/icon-close.svg" alt="close">
+      </div>
+
        </nav>
 
        
@@ -53,17 +64,17 @@
             <p class="content__space"> <span class="content__back">New</span> Monograph Dashboard</p> 
     
     
-            <h1 class="content__text">  POWERFUL INSIGNTS INTO YOUR TEAM</h1>
+            <h1 class="content__text">  POWERFUL INSIGNTS <br>INTO YOUR TEAM</h1>
                                        
     
              
             <p class="content__text2">Project planning and time tracking <br>for agile teams </p>
          <div class="flex">
              <button class="flex__button">SCHEDULE A DEMO </button> 
-                  <p class="flex__text">to see a live preview</p></div>
+                  <p class="flex__text"> TO SEE A LIVE PREVIEW</p></div> 
          </div>
 
-         <div ><img class="content__img" src="images/illustration-devices.svg">    </div> 
+         <div class="content__image" ><img class="content__img" src="images/illustration-devices.svg">    </div> 
       </div>
 
   </div>  
@@ -72,7 +83,7 @@
       <p class="attribution">Coded by <a href="#">Your Name Here</a>.</p>
     </footer>----->
    
-
+<script src="script.js"></script>
 
   </body>
 </html>
