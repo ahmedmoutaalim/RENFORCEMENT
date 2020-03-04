@@ -9,12 +9,11 @@ html {
 
 body {
   font-family: "Barlow Condensed";
-  overflow: hidden;
 }
 
 .bg {
-  height: 400px;
   width: 50%;
+  height: 400px;
   background-color: #eef3f6;
   position: absolute;
   top: 0;
@@ -23,152 +22,106 @@ body {
   border-bottom-left-radius: 100px;
 }
 
-@media screen and (max-width: 845px) {
-  .bg {
-    height: 490px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .bg {
-    height: 450px;
-  }
-}
-
 .menu {
-  text-align: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
 }
 
-@media screen and (max-width: 780px) {
-  .menu__div {
+.desktop {
+  display: none;
+}
+
+@media screen and (min-width: 900px) {
+  .desktop {
     display: block;
-    position: absolute;
-    z-index: 5;
-    background-color: white;
-    padding: 40px 120px;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 8px 0 rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 8px 0 rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    right: 30%;
-    top: 100px;
+    float: right;
+    margin-top: -40px;
+    margin-bottom: 70px;
+  }
+  .desktop il {
+    margin: 0 10px;
     font-size: 20px;
-    display: none;
-    display: initial;
+    font-weight: 900;
+  }
+  .desktop il a {
+    text-decoration: none;
+    color: black;
   }
 }
 
-@media screen and (max-width: 700px) {
-  .menu__div {
-    right: 25%;
-  }
-}
-
-@media screen and (max-width: 510px) {
-  .menu__div {
-    right: 17%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .menu__div {
-    right: 5px;
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .menu__div {
-    right: 16px;
-  }
-}
-
-.menu .burger {
-  position: absolute;
+.mobile {
+  z-index: 1111;
   display: none;
-}
-
-@media screen and (max-width: 780px) {
-  .menu .burger {
-    display: initial;
-  }
-}
-
-.menu .burger__open {
   position: absolute;
-  top: 28px;
-  right: 30px;
-  width: 35px;
-}
-
-.menu .burger__close {
-  position: absolute;
-  display: none;
-  top: 10px;
-  right: 10px;
-  width: 35px;
-}
-
-.menu__logo {
-  height: 20%;
-  margin-left: 10%;
-  padding-top: 2%;
-}
-
-.menu__gray {
+  border-radius: 10%;
   font-size: 30px;
-  color: #a0a1ac;
-}
-
-@media screen and (max-width: 780px) {
-  .menu__gray {
-    display: none;
-  }
-}
-
-.menu ul {
-  list-style: none;
-  background-color: #eef3f6;
-  padding: 3% 0% 20% 0%;
-  width: 50%;
-  text-align: center;
-  border-radius: 0% 0% 0% 60px;
-  z-index: -2;
-}
-
-@media screen and (max-width: 780px) {
-  .menu ul {
-    z-index: 6;
-    background: none;
-  }
-}
-
-.menu ul il {
-  padding: 0px 18px;
   font-weight: bold;
+  top: 80px;
+  left: 10%;
+  width: 80%;
+  height: 30vh;
+  -webkit-box-shadow: -2px 1px 12px -2px rgba(0, 0, 0, 0.75);
+          box-shadow: -2px 1px 12px -2px rgba(0, 0, 0, 0.75);
+  padding-top: 10%;
+  background-color: white;
 }
 
-.menu ul il a {
+.mobile li {
+  text-align: center;
+  list-style: none;
+  line-height: 30px;
+}
+
+.mobile li a {
   text-decoration: none;
   color: black;
+  margin: 5px 0;
 }
 
-@media screen and (max-width: 780px) {
-  .menu ul il a {
-    display: block;
+.mobile li a:hover {
+  text-decoration: underline;
+  color: #eef3f6;
+  text-decoration: none;
+}
+
+.btn {
+  position: relative;
+  float: right;
+}
+
+.burger {
+  position: absolute;
+  right: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .burger {
+    display: none;
   }
 }
 
-.menu ul il a__color {
-  color: #a0a1ac;
+.close {
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ .btn .close {
+  visibility: visible;
+}
+
+input[type=checkbox]:checked ~ .btn .burger {
+  visibility: hidden;
+}
+
+input[type=checkbox]:checked ~ .mobile {
+  display: block;
 }
 
 .content {
@@ -179,7 +132,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: -15%;
   margin-left: 10%;
   width: 80%;
 }
@@ -193,13 +145,19 @@ body {
   }
 }
 
-.content__img {
-  margin-left: 25%;
-  width: 130%;
+@media screen and (max-width: 780px) {
+  .content {
+    margin-top: 0;
+  }
+}
+
+.content img {
+  width: 120%;
+  margin-left: 30%;
 }
 
 @media screen and (max-width: 780px) {
-  .content__img {
+  .content img {
     margin-top: 70px;
   }
 }

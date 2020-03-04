@@ -31,29 +31,31 @@
 
   <body>
     <div class="bg"></div>
-
-  <div class="box"> 
-
-       <nav class="menu"> 
-
-      
-          <ul class="menu__links">
-            <div  class="menu__div" id="null">
+       <nav class="menu">
+            <img class="logo" src="images/logo.svg"> 
+            <input type="checkbox" id="check"/>
+            <div class="btn">
+              <label for="check" class="burger"><img src="images/icon-hamburger.svg" alt=""></label>
+              <label for="check" class="close"><img src="images/icon-close.svg" alt=""></label>
+            </div>
+           
+          <ul class="desktop">
              <il><a href="#">PRODUCT</a></il>
              <il><a href="#">FEATURES</a></il>
              <il><a href="#">PRICING</a></il>
-             <il class="menu__gray">.</il>
-             <il><a class="menu__color" href="#">LOGIN</a></il>
-            </div>
-            </ul>
-          
-          <img class="menu__logo" src="images/logo.svg"> 
+             <il class="desktop__gray">.</il>
+             <il><a class="desktop__gray" href="#">LOGIN</a></il>
 
-        <div class="burger">
-          <img id="open" class="burger__open"src="images/icon-hamburger.svg" alt="BURGER"> 
-        <img  class="burger__close"src="images/icon-close.svg" alt="close">
-      </div>
+          </ul>
 
+          <ul class="mobile">
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#">FEATURES</a></li>
+            <li><a href="#">PRICING</a></li>
+            <li class="menu__gray"></li>
+            <li><a class="menu__color" href="#">LOGIN</a></li>
+
+         </ul>
        </nav>
 
        
@@ -74,14 +76,14 @@
                   <p class="flex__text"> TO SEE A LIVE PREVIEW</p></div> 
          </div>
 
-         <div class="content__image" ><img class="content__img" src="images/illustration-devices.svg">    </div> 
+         <div class="content__image" ><img class="img" src="images/illustration-devices.svg">    </div> 
       </div>
 
-  </div>  
+  </div>   
 
     <!----<footer>
       <p class="attribution">Coded by <a href="#">Your Name Here</a>.</p>
-    </footer>----->
+    </footer>---
    
 <script src="script.js"></script>
 

@@ -1,7 +1,17 @@
 
+
 @mixin mq($width) {
 
     @media screen and (max-width:$width){
+        @content;
+        
+    }
+    
+}
+
+@mixin meq($width) {
+
+    @media screen and (min-width:$width){
         @content;
         
     }
@@ -16,7 +26,7 @@
 }
 
 
-html{
+ html{
     overflow-x: hidden;
 }
 
@@ -24,226 +34,181 @@ html{
 body{
 
     font-family: 'Barlow Condensed', ;
-    overflow: hidden;
-
+  
    
-    
 
-}
-.bg{
-    
-    height: 400px;
+
+ }
+
+
+ .bg {
+
     width: 50%;
+    height: 400px;
     background-color: hsl(207, 33%, 95%);
     position: absolute;
     top: 0;
     right: 0;
     z-index: -10;
-    border-bottom-left-radius: 100px;
+    border-bottom-left-radius:100px ;
 
-    @include mq(845px) {
-        height: 490px;
+ }
+ .menu{
+     position: relative;
+     width: 80%;
+     margin: 0 auto;
+     margin-top: 5%;
+ }
+ .desktop{
+     display: none;
+     
+     @include meq(900px){
+         display: block;
+         float:right;
+         margin-top: -40px;
+         margin-bottom:70px;
 
-    }
 
-    @include mq(400px) {
-        height: 450px;
+      il {
 
-    }
-    
-}
+        margin: 0 10px  ;
+        font-size: 20px;
+        font-weight: 900;
 
 
-
-
-
-
-
-.menu {
-    
-    text-align: right;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-
-    &__div{
+       
         
+
+        a {
+            text-decoration: none;
+            color: black;
         
-        @include mq(780px){
-
-            
-            
-            display: block;  
-            position: absolute;
-            z-index: 5;
-            background-color: white;
-            padding: 40px 120px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),            
-             0 6px 8px 0 rgba(0, 0, 0, 0.1);
-            border-radius: 10px; 
-            right: 30%;
-            top: 100px;
-            font-size: 20px;
-            display: none;
-            display:initial;
-
-
         }
+      }
 
-        @include mq(700px){
+         
+       
 
-            right: 25%;
-        }
+     }
 
-        @include mq(510px){
-
-            right: 17%;
-        }
-
-        @include mq (400px){
-
-            right: 5px;
-        }
-        @include mq(375px){
-            right: 16px;
-        }
-    }
-
-    .burger {
-        position: absolute;
-        display: none;
-        
-        @include mq(780px){
-            display: initial;
-        }
+   
+ }
 
 
-        &__open {
-
-            position: absolute;
-
-            top:28px;
-            right: 30px;
-            width: 35px;
-        }
-
-        &__close{
-
-            position: absolute;
-            display: none;
-            top:10px;
-            right: 10px;
-            width: 35px;
-        }
-
-    }
-
-    
  
-
-    &__logo {
-
-        height: 20%;
-        margin-left: 10%;
-        padding-top:2% ;
-
+ 
+ .mobile{
+   
+     z-index: 1111;
+     display: none;
+    position: absolute;
+    border-radius: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    top:80px;
+    left: 10%;
+     width: 80%;
+     
+     height: 30vh;
+     box-shadow: -2px 1px 12px -2px rgba(0,0,0,0.75);
+     padding-top: 10%;
+     background-color: white;
+     & li{
+         text-align: center;
+         list-style: none;
+         line-height: 30px;
+         
+     }
+     & li a{
+        text-decoration: none;
+        color: black;
+        margin: 5px 0;
         
-    }
-
-    &__gray {
-           
-          
-       font-size: 30px;
-       color: hsl(231, 7%, 65%);
-       
-    @include mq(780px){
-        display: none ;
-    }
-    }  
-    
-}
-
-
-
-.menu ul {
-    list-style: none;
-    background-color:hsl(207, 33%, 95%);
-    padding: 3% 0% 20% 0%;
-    width: 50%;
-    text-align: center;
-    border-radius:0% 0% 0% 60px;
-    z-index: -2;
-    @include mq(780px){
-        z-index: 6;
-        background:none;
-    }
+         &:hover{
+             text-decoration: underline;
+             color:hsl(207, 33%, 95%); ;
+             text-decoration: none;
+         }
+     }
     
 
-    
-    
-    
-    
-}
+ }
 
-
-
-
-
-.menu ul il {
-   
-
-    padding: 0px 18px;
-    font-weight:bold;
-   
-    
-    
-}
-
-
-
-.menu ul il a {
-
-    text-decoration:none;
-    color: black;
-    
-    @include mq(780px){
-        display: block ;
-       
-
-    }
-
-    &__color {
-        color:hsl(231, 7%, 65%) ;
-    }
-    
+.btn{
+    position: relative;
+    float: right;
   
+}  
+.burger{
+    position: absolute;
+    right: 0;
+    @include meq(900px){
+        display: none;
+    }
 }
+.close{
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+
+}
+input[type=checkbox]{
+    display: none;
+}
+input[type=checkbox]:checked~ .btn .close {
+    visibility: visible;
+}
+input[type=checkbox]:checked~ .btn .burger {
+    visibility: hidden;
+}
+input[type=checkbox]:checked~ .mobile {
+    display: block;
+}
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
 
   
 
 
 
 .content{
-
+   
     display: flex;
     flex-direction: row;
     
-    margin-top: -15%;
+   
     margin-left: 10%;
 
     width: 80%;
     @include mq(1040px){
-
+        
         flex-direction: column-reverse;
 
     }
 
+    @include mq(780px){
+        margin-top: 0;
+       
+
+    }
+ 
 
 
-       &__img {
-        
-        margin-left: 25%;
-         width: 130%;
+       & img {
+        width: 120%;
+       margin-left: 30%;
 
 
          @include mq(780px){
@@ -253,9 +218,7 @@ body{
          
        }
 
-       &__image {
-        //    width:   40%;
-       }
+       
 
        &__organisation {
 
@@ -307,7 +270,7 @@ body{
 }
 
 .flex {
-
+    
      display: flex;
      color: hsl(231, 7%, 65%);
 
@@ -336,21 +299,6 @@ body{
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
