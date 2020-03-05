@@ -308,12 +308,18 @@ input[type=checkbox]:checked~ .mobile {
         width:40%;
         border: none;
         outline: none;
+        @include mq(600px){
+
+            margin-top: 10%;
+        }
+      
     }
 
     &__text {
         
         margin: 28px 0px 0px 0px;
         word-spacing: 6px;
+       
 
         
     }
