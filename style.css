@@ -8,6 +8,7 @@ html {
 }
 
 body {
+  overflow: hidden;
   font-family: "Barlow Condensed";
 }
 
@@ -37,7 +38,7 @@ body {
   .desktop {
     display: block;
     float: right;
-    margin-top: -40px;
+    margin-top: -10px;
     margin-bottom: 70px;
   }
   .desktop il {
@@ -57,7 +58,7 @@ body {
   position: absolute;
   border-radius: 10%;
   font-size: 30px;
-  font-weight: bold;
+  font-weight: initial;
   top: 80px;
   left: 10%;
   width: 80%;
@@ -72,18 +73,22 @@ body {
   text-align: center;
   list-style: none;
   line-height: 30px;
+  padding: 6px 0;
 }
 
 .mobile li a {
   text-decoration: none;
   color: black;
-  margin: 5px 0;
 }
 
 .mobile li a:hover {
-  text-decoration: underline;
   color: #eef3f6;
   text-decoration: none;
+}
+
+.mobile hr {
+  width: 80%;
+  margin-left: 10%;
 }
 
 .btn {
@@ -158,7 +163,8 @@ input[type=checkbox]:checked ~ .mobile {
 
 @media screen and (max-width: 780px) {
   .content img {
-    margin-top: 70px;
+    margin: 70px 40px 0 0;
+    width: 150%;
   }
 }
 
@@ -171,6 +177,13 @@ input[type=checkbox]:checked ~ .mobile {
 @media screen and (max-width: 1040px) {
   .content__organisation {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  .content__organisation {
+    margin-top: 40%;
+    font-size: 10px;
   }
 }
 
